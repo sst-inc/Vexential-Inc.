@@ -1,45 +1,80 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Dimensions, SafeAreaView, TextInput, Button, Alert } from 'react-native';
 import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer, StackActions } from '@react-navigation/native';
-import { SafeAreaProvider } from 'react-native-safe-area-context'
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import globalStyles from "../styles/globalStyles";
+import { Text, View, Button } from 'react-native';
+import { styled } from 'nativewind';
+import { useNavigation } from '@react-navigation/native';
+import Navbar from '../components/navbar';
 
-const startDate = new Date(2023, 6, 16); // Month is 0-indexed
+const StyledView = styled(View);
+const StyledText = styled(Text);
+
+const MealPlan = () => {
+  const navigation = useNavigation();
+
+  const startDate = new Date(2023, 6, 16);
   const dates = [...Array(7)].map((_, i) => {
     let date = new Date(startDate);
     date.setDate(startDate.getDate() + i);
     return date;
   });
-const MealPlan = () => {
+
   return (
-    <View style={globalStyles.container}>
-      <View style={globalStyles.sidebar}></View>
-      <View style={globalStyles.main}>
-        <Text style={globalStyles.title}>Meal Plan</Text>
+    <StyledView className="flex-1 flex-row bg-blue-100 items-center justify-start">
+      {/* Sidebar */}
+      <StyledView className="w-44 h-full bg-blue-200">
+        <Button
+          title="Meal Plan"
+          onPress={() => navigation.navigate('MealPlan')}
+        />
+        <Button
+          title="Calendar"
+          onPress={() => navigation.navigate('Calendar')}
+        />
+        <Button
+          title="Profile"
+          onPress={() => navigation.navigate('Profile')}
+        />
+        <Button
+          title="Nutrition Guide"
+          onPress={() => navigation.navigate('NutritionGuide')}
+        />
+      </StyledView>
+
+      {/* Main Content */}
+      <StyledView className="flex-1 flex-col justify-start items-center h-full bg-blue-100 p-0">
+        {/* Title */}
+        <StyledText className="text-black text-xl font-semibold mt-3">
+          Meal Plan
+        </StyledText>
+
+        {/* Loop through the array of dates */}
         {dates.map((date, i) => (
-          <View 
-            key={i} 
-            style={[
-              globalStyles.date_box, 
-              {backgroundColor: i === 0 ? '#A8A8A8' : '#92C6E3'}
-            ]}
+          // Date Box
+          <StyledView
+            key={i}
+            className={`flex-col w-100/10 h-8 rounded-full items-center justify-between mt-3 ${
+              i === 0 ? 'bg-gray-400' : 'bg-blue-300'
+            }`}
           >
-            <View style={globalStyles.inner_view}>
-              <Text style={globalStyles.day}>Day {i+1}</Text>
-            </View>
-            <Text style={globalStyles.date}>{`${date.getDate()} ${date.toLocaleString('default', { month: 'long' })}`}</Text>
-          </View>
+            {/* Inner View for Day */}
+            <StyledView className="w-full flex-row justify-start items-center px-5">
+              <StyledText className="text-white text-sm font-normal">
+                Day {i + 1}
+              </StyledText>
+            </StyledView>
+
+            {/* Date */}
+            <StyledText className="text-white text-lg font-normal">
+              {`${date.getDate()} ${date.toLocaleString('default', { month: 'long' })}`}
+            </StyledText>
+          </StyledView>
         ))}
-      </View>
+      </StyledView>
+
+      {/* StatusBar */}
       <StatusBar style="auto" />
-    </View>
+    </StyledView>
   );
-}
+};
 
-
-
-export default MealPlan
+export default MealPlan;
