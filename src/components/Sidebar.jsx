@@ -6,7 +6,7 @@ const Sidebar = () => {
   const navigation = useNavigation();
 
   return (
-    <View style={{ width: 200, backgroundColor: 'lightblue' }}>
+    <View style={{ width: 175, backgroundColor: 'lightblue' }}>
       <Button title="Meal Plan" onPress={() => navigation.navigate('MealPlan')} />
       <Button title="Calendar" onPress={() => navigation.navigate('Calendar')} />
       <Button title="Profile" onPress={() => navigation.navigate('Profile')} />
