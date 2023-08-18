@@ -68,5 +68,4 @@ const Calendar = () => {
     </StyledView>
   );
 };
-
 export default Calendar;

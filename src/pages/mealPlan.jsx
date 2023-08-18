@@ -3,7 +3,7 @@ import React from 'react';
 import { Text, View, Button } from 'react-native';
 import { styled } from 'nativewind';
 import { useNavigation } from '@react-navigation/native';
-import Navbar from '../components/navbar';
+import Sidebar from '../components/Sidebar'
 
 const StyledView = styled(View);
 const StyledText = styled(Text);
@@ -19,26 +19,11 @@ const MealPlan = () => {
   });
 
   return (
-    <StyledView className="flex-1 flex-row bg-blue-100 items-center justify-start">
-      {/* Sidebar */}
-      <StyledView className="w-44 h-full bg-blue-200">
-        <Button
-          title="Meal Plan"
-          onPress={() => navigation.navigate('MealPlan')}
-        />
-        <Button
-          title="Calendar"
-          onPress={() => navigation.navigate('Calendar')}
-        />
-        <Button
-          title="Profile"
-          onPress={() => navigation.navigate('Profile')}
-        />
-        <Button
-          title="Nutrition Guide"
-          onPress={() => navigation.navigate('NutritionGuide')}
-        />
-      </StyledView>
+    <StyledView className="flex-1 flex-row">
+    {/* Sidebar */}
+    <StyledView className="w-44 h-full bg-blue-200">
+      <Sidebar />
+    </StyledView>
 
       {/* Main Content */}
       <StyledView className="flex-1 flex-col justify-start items-center h-full bg-blue-100 p-0">
