@@ -7,6 +7,7 @@ const Sidebar = () => {
   const navigation = useNavigation();
   const route = useRoute();
   return (
+    
     <View className="w-[200] h-full bg-blue-100 py-10 flex flex-col items-center">
 
       <Pressable
