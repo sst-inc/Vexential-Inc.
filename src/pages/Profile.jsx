@@ -1,12 +1,28 @@
-import React from 'react';
-import { Text, View, Button } from 'react-native';
+import React, { useState } from 'react';
+import { Text, View, Pressable } from 'react-native';
 import { styled } from 'nativewind';
 import Sidebar from '../components/Sidebar';
 
 const StyledView = styled(View);
 const StyledText = styled(Text);
+const StyledPressable = styled(Pressable);
 
 const Profile = () => {
+  const languages = ['English', 'Mandarin', 'Malay', 'Tamil'];
+  const [selectedLanguageIndex, setSelectedLanguageIndex] = useState(0);
+
+
+  const changeLanguage = () => {
+    setSelectedLanguageIndex((selectedLanguageIndex + 1) % languages.length);
+  };
+  
+
+  const forceUpdate = () => {
+    // A dummy state to trigger a re-render
+    setDummyState({});
+  };
+
+  const [dummyState, setDummyState] = React.useState({});
   return (
     <StyledView className="flex-1 flex-row">
       {/* Sidebar */}
@@ -28,24 +44,29 @@ const Profile = () => {
           <StyledView className="flex flex-col items-start">
             {/* Row 1 */}
             <StyledView className="flex-row items-center mb-4">
-              <StyledView className="w-[300px] h-[64px] bg-blue-200 flex justify-center items-center">
+              <StyledView className="w-[300px] h-[64px] bg-[#B5E3F2] flex justify-center items-center">
                 <StyledText className="text-white text-base font-semibold">
                   LANGUAGE
                 </StyledText>
               </StyledView>
               <StyledView className="w-[554px] h-[64px] bg-white flex justify-center items-center ml-0">
                 <StyledText className="text-black text-base font-semibold">
-                  English
+                  {languages[selectedLanguageIndex]}
                 </StyledText>
               </StyledView>
-              <StyledView className="w-118 h-73 ml-0">
-                <Button title="Change" onPress={() => {}} />
-              </StyledView>
+              <StyledPressable
+                className="w-[118px] h-[73px] ml-2 rounded-md bg-[#CEE5EC] flex justify-center items-center"
+                onPress={changeLanguage}
+              >
+                <StyledText className="text-black text-base font-semibold">
+                  Change
+                </StyledText>
+              </StyledPressable>
             </StyledView>
 
             {/* Row 2 */}
             <StyledView className="flex-row items-center mb-4">
-              <StyledView className="w-[300px] h-[64px] bg-blue-200 flex justify-center items-center">
+              <StyledView className="w-[300px] h-[64px] bg-[#B5E3F2] flex justify-center items-center">
                 <StyledText className="text-white text-base font-semibold">
                   AGE
                 </StyledText>
@@ -55,14 +76,16 @@ const Profile = () => {
                   60 to 70
                 </StyledText>
               </StyledView>
-              <StyledView className="w-118 h-73 ml-0">
-                <Button title="Change" onPress={() => {}} />
-              </StyledView>
+              <StyledPressable className="w-[118px] h-[64px] ml-2 rounded-md bg-[#CEE5EC] flex justify-center items-center">
+                <StyledText className="text-black text-base font-semibold">
+                  Change
+                </StyledText>
+              </StyledPressable>
             </StyledView>
-            
+
             {/* Row 3 */}
             <StyledView className="flex-row items-center mb-4">
-              <StyledView className="w-[300px] h-[64px] bg-blue-200 flex justify-center items-center">
+              <StyledView className="w-[300px] h-[64px] bg-[#B5E3F2] flex justify-center items-center">
                 <StyledText className="text-white text-base font-semibold">
                   CHRONIC DISEASE
                 </StyledText>
@@ -72,14 +95,16 @@ const Profile = () => {
                   _,_,_
                 </StyledText>
               </StyledView>
-              <StyledView className="w-118 h-73 ml-0">
-                <Button title="Change" onPress={() => {}} />
-              </StyledView>
+              <StyledPressable className="w-[118px] h-[64px] ml-2 rounded-md bg-[#CEE5EC] flex justify-center items-center">
+                <StyledText className="text-black text-base font-semibold">
+                  Change
+                </StyledText>
+              </StyledPressable>
             </StyledView>
 
             {/* Row 4 */}
             <StyledView className="flex-row items-center">
-              <StyledView className="w-[300px] h-[64px] bg-blue-200 flex justify-center items-center">
+              <StyledView className="w-[300px] h-[64px] bg-[#B5E3F2] flex justify-center items-center">
                 <StyledText className="text-white text-base font-semibold">
                   DIETARY NEEDS
                 </StyledText>
@@ -89,9 +114,11 @@ const Profile = () => {
                   Vegetarian
                 </StyledText>
               </StyledView>
-              <StyledView className="w-118 h-73 ml-0">
-                <Button title="Change" onPress={() => {}} />
-              </StyledView>
+              <StyledPressable className="w-[118px] h-[64px] ml-2 rounded-md bg-[#CEE5EC] flex justify-center items-center">
+                <StyledText className="text-black text-base font-semibold">
+                  Change
+                </StyledText>
+              </StyledPressable>
             </StyledView>
           </StyledView>
         </StyledView>
