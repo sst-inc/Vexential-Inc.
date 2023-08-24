@@ -15,7 +15,7 @@ const Sidebar = () => {
           console.log(route)
           navigation.navigate('MealPlan')
         }}
-        className='flex flex-col my-8 justify-center'
+        className='py-3 flex flex-col my-10 justify-center'
       >
         <Image 
           source={require('../../assets/mealplan_icon.png')} 
