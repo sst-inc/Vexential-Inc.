@@ -3,6 +3,8 @@ import { Text, View, ScrollView } from 'react-native';
 import { styled } from 'nativewind';
 import Sidebar from '../components/Sidebar';
 
+
+
 const StyledView = styled(View);
 const StyledText = styled(Text);
 

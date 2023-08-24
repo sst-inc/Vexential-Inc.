@@ -3,6 +3,7 @@ import React from 'react';
 import { Text, View, Pressable } from 'react-native';
 import { styled } from 'nativewind';
 import { useNavigation } from '@react-navigation/native';
+
 import Sidebar from '../components/Sidebar';
 
 const StyledView = styled(View);
