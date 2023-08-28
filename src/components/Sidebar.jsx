@@ -3,6 +3,19 @@ import { View, Button, Pressable, Text, Image } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import Svg, { Path } from 'react-native-svg';
 
+const getData = async() => {
+  const response = fetch("http://192.168.155.82:5000/food/?food=1",
+  {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+  }})
+  response.then(async(data) => {
+    let json_data = await data.json()
+    console.log(json_data)
+  })
+}
+
 const Sidebar = () => {
   const navigation = useNavigation();
   const route = useRoute();
@@ -12,8 +25,8 @@ const Sidebar = () => {
 
       <Pressable
         onPress = {() => {
-          console.log(route)
-          navigation.navigate('MealPlan')
+          navigation.navigate('MealPlan');
+          getData()
         }}
         className='py-3 flex flex-col my-10 justify-center'
       >

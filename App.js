@@ -11,26 +11,46 @@ import RecommendedMealPlan from './src/pages/RecommendedMealPlan';
 const Stack = createNativeStackNavigator();
 
 const foodChoicesForBreakfast = [
-  {id: '1', name: 'Scrambled eggs with asparagus and tomatoes', stars: '4', price: '', unhealthy: '', image:''},
-  {id: '2', name: 'Spinach and mushroom omelette', stars: '5', price: '', unhealthy: '', image:''},
-  {id: '3', name: 'Greek yoghurt with mixed berries and chopped almonds', stars: '3', price: '', unhealthy: '', image:''},
+  {id: 1, name: 'Scrambled eggs with asparagus and tomatoes', stars: 4, price: '', unhealthy: '', image_uri:'', meal_time: 'breakfast'},
+  {id: 2, name: 'Spinach and mushroom omelette', stars: 5, price: '', unhealthy: '', image_uri:'', meal_time: 'breakfast'},
+  {id: 3, name: 'Greek yoghurt with mixed berries and chopped almonds', stars: 3, price: 0, unhealthy: '', image_uri:'', meal_time: 'breakfast'},
+  {id: 4, name: '', stars: 4, price: 0, unhealthy: '', image_uri:'', meal_time: 'breakfast'},
+  {id: 5, name: '', stars: 4, price: 0, unhealthy: '', image_uri:'', meal_time: 'breakfast'},
+  {id: 6, name: '', stars: 4, price: 0, unhealthy: '', image_uri:'', meal_time: 'breakfast'},
+  {id: 7, name: '', stars: 4, price: 0, unhealthy: '', image_uri:'', meal_time: 'breakfast'},
+  {id: 8, name: '', stars: 4, price: 0, unhealthy: '', image_uri:'', meal_time: 'breakfast'},
+  {id: 9, name: '', stars: 4, price: 0, unhealthy: '', image_uri:'', meal_time: 'breakfast'},
+  {id: 10, name: '', stars: 4, price: 0, unhealthy: '', image_uri:'', meal_time: 'breakfast'},
+  {id: 11, name: '', stars: 4, price: 0, unhealthy: '', image_uri:'', meal_time: 'breakfast'},
+
   ]
 
 const foodChoicesForLunch = [
-  {id: '1', name: 'Grilled fish and green beans with brown rice', stars: '5', price: '', unhealthy: '', image: ''},
-  {id: '2', name: 'Lentil and bell pepper stir-fry with tofu', stars: '4', price: '', unhealthy: ''},
-  {id: '3', name: 'Chicken and asparagus salad with black beans', stars: '3', price: '', unhealthy: ''},
-  {id: '4', name: '', stars: '4', price: '', unhealthy: ''},
-  {id: '5', name: '', stars: '4', price: '', unhealthy: ''},
-  {id: '6', name: '', stars: '4', price: '', unhealthy: ''},
+  {id: 1, name: 'Grilled fish and green beans with brown rice', stars: 5, price: 0, unhealthy: '', image_uri: '', meal_time: 'lunch'},
+  {id: 2, name: 'Lentil and bell pepper stir-fry with tofu', stars: 4, price: 0, unhealthy: '', image_uri: '', meal_time: 'lunch'},
+  {id: 3, name: 'Chicken and asparagus salad with black beans', stars: 3, price: 0, unhealthy: '', image_uri: '', meal_time: 'lunch'},
+  {id: 4, name: '', stars: 4, price: 0, unhealthy: '', image_uri: '', meal_time: 'lunch'},
+  {id: 5, name: '', stars: 4, price: 0, unhealthy: '', image_uri: '', meal_time: 'lunch'},
+  {id: 6, name: '', stars: 4, price: 0, unhealthy: '', image_uri: '', meal_time: 'lunch'},
+  {id: 7, name: '', stars: 4, price: 0, unhealthy: '', image_uri: '', meal_time: 'lunch'},
+  {id: 8, name: '', stars: 4, price: 0, unhealthy: '', image_uri: '', meal_time: 'lunch'},
+  {id: 9, name: '', stars: 4, price: 0, unhealthy: '', image_uri: '', meal_time: 'lunch'},
+  {id: 10, name: '', stars: 4, price: 0, unhealthy: '', image_uri: '', meal_time: 'lunch'},
+  {id: 11, name: '', stars: 4, price: 0, unhealthy: '', image_uri: '', meal_time: 'lunch'},
+  {id: 12, name: '', stars: 4, price: 0, unhealthy: '', image_uri: '', meal_time: 'lunch'},
 ]
 
 const foodChoicesForDinner = [
-  {id: '1', name: 'Chickpea and chicken salad with spinach', stars: '3', price: '', unhealthy: ''},
-  {id: '2', name: 'Bok choy and tofu stir-fry with brown rice', stars: '3', price: '', unhealthy: ''},
-  {id: '3', name: 'Bell pepper stuffed with lentils and grilled chicken', stars: '5', price: '', unhealthy: ''},
-  {id: '4', name: '', stars: '3', price: '', unhealthy: ''},
-  {id: '5', name: '', stars: '3', price: '', unhealthy: ''},
+  {id: 1, name: 'Chickpea and chicken salad with spinach', stars: 3, price: 0, unhealthy: '', image_uri: '', meal_time: 'dinner'},
+  {id: 2, name: 'Bok choy and tofu stir-fry with brown rice', stars: 3, price: 0, unhealthy: '', image_uri: '', meal_time: 'dinner'},
+  {id: 3, name: 'Bell pepper stuffed with lentils and grilled chicken', stars: 5, price: 0, unhealthy: '', image_uri: '', meal_time: 'dinner'},
+  {id: 4, name: '', stars: 3, price: 0, unhealthy: '', image_uri: '', meal_time: 'dinner'},
+  {id: 5, name: '', stars: 3, price: 0, unhealthy: '', image_uri: '', meal_time: 'dinner'},
+  {id: 6, name: '', stars: 3, price: 0, unhealthy: '', image_uri: '', meal_time: 'dinner'},
+  {id: 7, name: '', stars: 3, price: 0, unhealthy: '', image_uri: '', meal_time: 'dinner'},
+  {id: 8, name: '', stars: 3, price: 0, unhealthy: '', image_uri: '', meal_time: 'dinner'},
+  {id: 9, name: '', stars: 3, price: 0, unhealthy: '', image_uri: '', meal_time: 'dinner'},
+  {id: 10, name: '', stars: 3, price: 0, unhealthy: '', image_uri: '', meal_time: 'dinner'},
 ]
 
 {/* function to get random foodchoice */}
@@ -54,6 +74,8 @@ console.log(foodChosenForLunch.name)
 console.log(foodChosenForDinner.name)
 
 const App = () => {
+
+  
   return (
     <NavigationContainer>
       <Stack.Navigator>
