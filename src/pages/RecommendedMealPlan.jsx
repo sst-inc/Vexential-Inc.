@@ -1,18 +1,17 @@
-import React from 'react';
-import { Text, View, Pressable } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Text, View, Pressable, Image } from 'react-native';
 import { styled } from 'nativewind';
 import { useNavigation, useRoute } from '@react-navigation/native';
+
 
 const StyledView = styled(View);
 const StyledText = styled(Text);
 const StyledPressable = styled(Pressable);
 
-
-
 const RecommendedMealPlan = () => {
   const navigation = useNavigation();
   const route = useRoute();
-  const { dayNumber } = route.params;
+  const { dayNumber, breakfast, lunch, dinner } = route.params;
 
   return (
     <StyledView className="flex-1 flex-col bg-blue-100 p-0">
@@ -57,7 +56,6 @@ const RecommendedMealPlan = () => {
           <StyledView className="w-[292px] h-[67px] rounded-full bg-[#48A3E4] flex justify-center items-center">
             <StyledText className="text-white text-3xl font-semibold">
               DINNER
-              
             </StyledText>
           </StyledView>
         </StyledView>
@@ -66,24 +64,51 @@ const RecommendedMealPlan = () => {
         <StyledView className="flex-row justify-between items-start p-3 pl-10 pr-10">
           <StyledView className="w-[292px] h-[394px] rounded-lg bg-[#C4E5F8] border border-gray-300">
             {/* Content for Breakfast */}
+            <StyledText className="text-black text-xl font-semibold p-4">
+              {breakfast ? breakfast.name : 'No breakfast'}
+            </StyledText>
+            {breakfast && (
+              <Image
+                source={{ uri: breakfast.image_uri }}
+                style={{ width: '100%', height: 200 }}
+                resizeMode="cover"
+              />
+            )}
           </StyledView>
           <StyledView className="w-[292px] h-[394px] rounded-lg bg-[#C4E5F8] border border-gray-300">
             {/* Content for Lunch */}
+            <StyledText className="text-black text-xl font-semibold p-4">
+              {lunch ? lunch.name : 'No lunch'}
+            </StyledText>
+            {lunch && (
+              <Image
+                source={{ uri: lunch.image_uri }}
+                style={{ width: '100%', height: 200 }}
+                resizeMode="cover"
+              />
+            )}
           </StyledView>
           <StyledView className="w-[292px] h-[394px] rounded-lg bg-[#C4E5F8] border border-gray-300">
             {/* Content for Dinner */}
+            <StyledText className="text-black text-xl font-semibold p-4">
+              {dinner ? dinner.name : 'No dinner'}
+            </StyledText>
+            {dinner && (
+              <Image
+                source={{ uri: dinner.image_uri }}
+                style={{ width: '100%', height: 200 }}
+                resizeMode="cover"
+              />
+            )}
           </StyledView>
         </StyledView>
         {/* Rounded Box at the Bottom */}
         <StyledView className="w-[340px] h-[52px] rounded-full bg-[#146B9C] m-3 mx-auto flex justify-center items-center">
-            <StyledText className="text-white text-2xl font-semibold">
+          <StyledText className="text-white text-2xl font-semibold">
             Are my meals balanced?
-            </StyledText>
+          </StyledText>
         </StyledView>
-        
       </StyledView>
-
-      
     </StyledView>
   );
 };
