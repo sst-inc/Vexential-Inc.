@@ -14,10 +14,12 @@ const DiseasesPage = () => {
 
   const [diseases, setDiseases] = useState([
     { id: 'diabetes', name: 'Diabetes', selected: false },
-    { id: 'hypertension', name: 'Hypertension', selected: false },
-    { id: 'heartDisease', name: 'Heart Disease', selected: false },
-    { id: 'stroke', name: 'Stroke', selected: false },
-    { id: 'lungDisease', name: 'Lung Disease', selected: false },
+    { id: 'highBloodPressure', name: 'High Blood Pressure', selected: false },
+    { id: 'lowBloodPressure', name: 'Low Blood Pressure', selected: false },
+    { id: 'cardiovascularDiseases', name: 'Cardiovascular Diseases', selected: false },
+    { id: 'highCholesterol', name: 'High Cholesterol', selected: false },
+    { id: 'arthritis', name: 'Arthritis', selected: false },
+    { id: 'dementia', name: 'Dementia', selected: false },
   ]);
 
   const toggleDisease = (diseaseId) => {
@@ -26,6 +28,13 @@ const DiseasesPage = () => {
         disease.id === diseaseId ? { ...disease, selected: !disease.selected } : disease
       )
     );
+  };
+
+  const handleNextPress = () => {
+    // You can perform any necessary actions here before navigating to the next screen
+
+    // Navigate to the MealPlan screen
+    navigation.navigate('MealPlan');
   };
 
   return (
@@ -41,26 +50,25 @@ const DiseasesPage = () => {
           Do you have any of these chronic diseases?
         </StyledText>
         <StyledView className="flex-col items-center">
-        {diseases.map((disease) => (
+          {diseases.map((disease) => (
             <StyledTouchableOpacity
-            key={disease.id}
-            className={`w-80 h-20 rounded-md bg-blue-500 ${
+              key={disease.id}
+              className={`w-80 h-16 rounded-md bg-blue-500 ${
                 disease.selected ? 'border border-white' : ''
-            } mt-2 flex-row items-center justify-center`}
-            onPress={() => toggleDisease(disease.id)}
+              } mt-2 flex-row items-center justify-center`}
+              onPress={() => toggleDisease(disease.id)}
             >
-            {disease.selected && (
+              {disease.selected && (
                 <StyledText className="text-white text-lg font-semibold mr-2">&#10003;</StyledText>
-            )}
+              )}
+              <StyledText className="text-white text-lg">{disease.name}</StyledText>
             </StyledTouchableOpacity>
-        ))}
+          ))}
         </StyledView>
 
         <StyledTouchableOpacity
           className="bg-blue-500 p-4 rounded-md absolute bottom-5 right-5"
-          onPress={() => {
-            // Handle button press, e.g., navigate to the next screen
-          }}
+          onPress={handleNextPress}
         >
           <StyledText className="text-white text-lg font-semibold">Next</StyledText>
         </StyledTouchableOpacity>
