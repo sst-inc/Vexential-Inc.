@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Text, View, Pressable, Image } from 'react-native';
 import { styled } from 'nativewind';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { foodChoicesForLunch, foodChoicesForDinner } from '../utils/data'
+
 const foodChoicesForBreakfast = require('../utils/data/breakfastFood.json')
+const foodChoicesForLunch = require('../utils/data/lunchFood.json')
+const foodChoicesForDinner = require('../utils/data/dinnerFood.json')
 
 const StyledView = styled(View);
 const StyledText = styled(Text);

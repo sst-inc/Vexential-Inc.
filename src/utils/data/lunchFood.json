@@ -1,0 +1,15 @@
+{
+  "1": {"name": "Black bean and mushroom soup with a side of mixed greens", "stars": 2, "price": 0, "disease": "Diabetes", "image_uri": "https://addapinch.com/wp-content/uploads/2017/10/mushroom-black-bean-soup-recipe-0020.jpg", "meal_time": "lunch"},
+  "2": {"name": "Chickpea and bell pepper curry with a side of brown rice", "stars": 2, "price": 0, "disease": "Diabetes", "image_uri": "https://www.sleekgeek.co.za/wp-content/uploads/2018/09/recipe-chickpeas-curry.jpg", "meal_time": "lunch"},
+  "3": {"name": "Eggplant and black bean stir-fry with brown rice", "stars": 2, "price": 0, "disease": "Diabetes", "image_uri": "https://proveg.com/us/wp-content/uploads/sites/9/2021/06/ezgif.com-gif-maker-8-2.jpg", "meal_time": "lunch"},
+  "4": {"name": "Bok choy and tofu stir-fry with brown rice", "stars": 3, "price": 0, "disease": "Diabetes", "image_uri": "https://naturallyella.com/wp-content/uploads/2019/05/crispy_bok_choy-bowls-1.jpg", "meal_time": "lunch"},
+  "5": {"name": "Chickpea and chicken salad with spinach", "stars": 3, "price": 0, "disease": "Diabetes", "image_uri": "https://img.taste.com.au/hQTQOlEO/w720-h480-cfill-q80/taste/2016/11/chicken-spinach-and-chickpea-salad-13284-1.jpeg", "meal_time": "lunch"},
+  "6": {"name": "Chicken and asparagus salad with black beans", "stars": 3, "price": 0, "disease": "Diabetes", "image_uri": "", "meal_time": "lunch"},
+  "7": {"name": "Beef and cabbage stir-fry with lentils", "stars": 4, "price": 0, "disease": "Diabetes", "image_uri": "", "meal_time": "lunch"},
+  "8": {"name": "Broccoli and tofu stir-fry with brown rice", "stars": 4, "price": 0, "disease": "Diabetes", "image_uri": "https://www.myplantifulcooking.com/wp-content/uploads/2020/11/vegan-asian-tofu-broccoli-mushroom-stir-fry-2.jpg", "meal_time": "lunch"},
+  "9": {"name": "Eggplant and lentil stir-fry with brown rice", "stars": 4, "price": 0, "disease": "Diabetes", "image_uri": "https://a-la-damaris.com/wp-content/uploads/2022/01/linzen-en-rijst-copy-800x530.jpg.webp", "meal_time": "lunch"},
+  "10": {"name": "Beef and broccoli stir-fry with whole wheat noodles", "stars": 5, "price": 0, "disease": "Diabetes", "image_uri": "https://therecipecritic.com/wp-content/uploads/2017/08/beeflomein2.jpg", "meal_time": "lunch"},
+  "11": {"name": "Bell pepper stuffed with quinoa and ground turkey/beef", "stars": 5, "price": 0, "disease": "Diabetes", "image_uri": "https://theheirloompantry.co/wp-content/uploads/2022/08/turkey-and-quinoa-stuffed-bell-peppers-without-rice-the-heirloom-pantry-03.jpg", "meal_time": "lunch"},
+  "12": {"name": "Chicken and asparagus stir-fry with lentils", "stars": 5, "price": 0, "disease": "Diabetes", "image_uri": "https://images.ricardocuisine.com/services/recipes/992x1340_59520615554412ad8d2d2d.jpg", "meal_time": "lunch"},
+  "13": {"name": "Chicken and green bean stir-fry with brown rice", "stars": 5, "price": 0, "disease": "Diabetes", "image_uri": "https://confessionsofafitfoodie.com/wp-content/uploads/2023/01/Ground-Chicken-Stir-Fry-.jpeg", "meal_time": "lunch"}
+}
