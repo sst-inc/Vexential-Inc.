@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Text, View, Pressable, Image } from 'react-native';
 import { styled } from 'nativewind';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { foodChosenForBreakfast, foodChosenForLunch, foodChosenForDinner } from '../../App'
+import { foodChoicesForLunch, foodChoicesForDinner } from '../utils/data'
+const foodChoicesForBreakfast = require('../utils/data/breakfastFood.json')
 
 const StyledView = styled(View);
 const StyledText = styled(Text);
@@ -12,87 +13,31 @@ const RecommendedMealPlan = () => {
   const navigation = useNavigation();
   const route = useRoute();
   const { dayNumber } = route.params;
+  const [data, setData] = useState([])
 
-  // Define the meal data for each day
-  const mealData = {
-    1: {
-      breakfast: {
-        name: foodChosenForBreakfast.name,
-        image_uri:
-        foodChosenForBreakfast.image_uri,
-      },
-      lunch: {
-        name: foodChosenForLunch.name,
-        image_uri: foodChosenForLunch.image_uri,
-      },
-      dinner: {
-        name: foodChosenForDinner.name,
-        image_uri: foodChosenForDinner.image_uri,
-      },
-    },
-    2: {
-      breakfast: {
-        name: 'Greek Yogurt with Mixed Berries and Chopped Almonds',
-        image_uri:
-          'https://www.almonds.com/sites/default/files/2020-07/abc_BreakfastPairing_A_re01.jpg',
-      },
-      lunch: {
-        name: 'Lentil and Bell Pepper Stir-Fry with Tofu',
-        image_uri: 'https://example.com/lentil-stir-fry.jpg',
-      },
-      dinner: {
-        name: 'Bok Choy and Tofu Stir-Fry with Brown Rice',
-        image_uri: 'https://example.com/bok-choy-stir-fry.jpg',
-      },
-    },
-    3: {
-      breakfast: {
-        name: 'Oatmeal Pancakes with Blueberries',
-        image_uri:
-          'https://s23209.pcdn.co/wp-content/uploads/2012/10/IMG_6988-360x360.jpg',
-      },
-      lunch: {
-        name: 'Chicken and Asparagus Salad with Black Beans',
-        image_uri: 'https://example.com/chicken-salad.jpg',
-      },
-      dinner: {
-        name: 'Bell Pepper Stuffed with Lentils and Grilled Chicken',
-        image_uri: 'https://example.com/stuffed-pepper.jpg',
-      },
-    },
-    // Add more days ltr u stupid idiot adrill
-
-    4: {
-      breakfast:{
-        name: 'Whole wheat toast with poached/scrambled/fried eggs',
-        image_uri: 'https://images.squarespace-cdn.com/content/v1/55f9c9abe4b09e993da5f156/1539174364166-TIQK5VFA6ANJ2G8X028L/image-asset.png?format=2500w'
-      },
-
-      lunch: {
-        name: 'Black bean and mushroom soup with a side of mixed greens', 
-        image_uri: 'https://addapinch.com/wp-content/uploads/2017/10/mushroom-black-bean-soup-recipe-0020.jpg',
-      },
-
-      dinner: {
-        name: 'Lentil and turkey stir-fry with quinoa', 
-        image_uri: 'https://i0.wp.com/sepcooks.com/wp-content/uploads/2021/07/3DD96B95-F1C8-40D2-99F9-74B73EF16957_1_201_a.jpeg?zoom=2&resize=665%2C435&ssl=1',
-      }
-    },
-
-    5: {
-      breakfast:{
-        name: 'Quinoa porridge with mixed fruits', 
-        image_uri:'https://www.simplyquinoa.com/wp-content/uploads/2020/01/ultimate-superfood-quinoa-porridge-7.webp'
-      },
-
-      dinner: {
-        
-      }
+  const chooseRandomFood = (foodChoicesForBreakfast, foodChoicesForLunch, foodChoicesForDinner) => {
+    function getRandomItem(arr) {
+      const randomIndex = typeof arr == Array ? Math.floor(Math.random() * arr.length) : Math.floor(Math.random() * Object.keys(arr).length)
+      return arr[randomIndex];
     }
-  };
-  
+    
+    const foodChosenForBreakfast = getRandomItem(foodChoicesForBreakfast)
+    const foodChosenForLunch = getRandomItem(foodChoicesForLunch)
+    const foodChosenForDinner = getRandomItem(foodChoicesForDinner)
 
-  const selectedMeals = mealData[dayNumber];
+    const result = {
+      breakfast: foodChosenForBreakfast,
+      lunch: foodChosenForLunch,
+      dinner: foodChosenForDinner
+    }
+
+    setData(result)
+    console.log(result)
+  }
+
+  useEffect(() => {
+    chooseRandomFood(foodChoicesForBreakfast, foodChoicesForLunch, foodChoicesForDinner)
+  }, [])
 
   return (
     <StyledView className="flex-1 flex-col bg-blue-100 p-0">
@@ -146,13 +91,13 @@ const RecommendedMealPlan = () => {
           <StyledView className="w-[292px] h-[394px] rounded-lg bg-[#C4E5F8] border border-gray-300">
             {/* Content for Breakfast */}
             <StyledText className="text-black text-xl font-semibold p-4">
-              {selectedMeals.breakfast
-                ? selectedMeals.breakfast.name
+              {data.breakfast
+                ? data.breakfast.name
                 : 'No breakfast'}
             </StyledText>
-            {selectedMeals.breakfast && (
+            {data.breakfast && (
               <Image
-                source={{ uri: selectedMeals.breakfast.image_uri }}
+                source={{ uri: data.breakfast.image_uri }}
                 style={{ width: '100%', height: 200 }}
                 resizeMode="cover"
               />
@@ -161,11 +106,11 @@ const RecommendedMealPlan = () => {
           <StyledView className="w-[292px] h-[394px] rounded-lg bg-[#C4E5F8] border border-gray-300">
             {/* Content for Lunch */}
             <StyledText className="text-black text-xl font-semibold p-4">
-              {selectedMeals.lunch ? selectedMeals.lunch.name : 'No lunch'}
+              {data.lunch ? data.lunch.name : 'No lunch'}
             </StyledText>
-            {selectedMeals.lunch && (
+            {data.lunch && (
               <Image
-                source={{ uri: selectedMeals.lunch.image_uri }}
+                source={{ uri: data.lunch.image_uri }}
                 style={{ width: '100%', height: 200 }}
                 resizeMode="cover"
               />
@@ -174,11 +119,11 @@ const RecommendedMealPlan = () => {
           <StyledView className="w-[292px] h-[394px] rounded-lg bg-[#C4E5F8] border border-gray-300">
             {/* Content for Dinner */}
             <StyledText className="text-black text-xl font-semibold p-4">
-              {selectedMeals.dinner ? selectedMeals.dinner.name : 'No dinner'}
+              {data.dinner ? data.dinner.name : 'No dinner'}
             </StyledText>
-            {selectedMeals.dinner && (
+            {data.dinner && (
               <Image
-                source={{ uri: selectedMeals.dinner.image_uri }}
+                source={{ uri: data.dinner.image_uri }}
                 style={{ width: '100%', height: 200 }}
                 resizeMode="cover"
               />

@@ -1,0 +1,6 @@
+{
+  "1": {"name": "Scrambled eggs with asparagus and tomatoes", "stars": 4, "price": "", "unhealthy": "", "image_uri":"https://www.sydneymarkets.com.au/recipes/images/asparagus-and-parmesan-scrambled-eggs.jpg", "meal_time": "breakfast"},
+  "2": {"name": "Greek yoghurt with mixed berries and chopped almonds", "stars": 3, "price": 0, "unhealthy": "", "image_uri":"https://www.almonds.com/sites/default/files/2020-07/abc_BreakfastPairing_A_re01.jpg", "meal_time": "breakfast"},
+  "3": {"name": "Oatmeal pancakes with blueberries", "stars": 4, "price": 0, "unhealthy": "", "image_uri":"https://s23209.pcdn.co/wp-content/uploads/2012/10/IMG_6988-360x360.jpg", "meal_time": "breakfast"},
+  "4": {"name": "Greek yoghurt with mixed nuts, berries, and honey", "stars": 4, "price": 0, "unhealthy": "", "image_uri":"https://i0.wp.com/thedomesticdietitian.com/wp-content/uploads/2021/01/pomegranate-greek-yogurt-bowl-4.jpg?w=870&ssl=1", "meal_time": "breakfast"}
+}
