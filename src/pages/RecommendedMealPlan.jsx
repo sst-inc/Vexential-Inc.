@@ -17,7 +17,7 @@ const StyledPressable = styled(Pressable);
 
 const RecommendedMealPlan = ({ route }) => {
 const navigation = useNavigation();
-const { dayNumber, selectedDiseases } = route.params;
+const { dayNumber, selectedDiseases } = route.params ? route.params : {dayNumber: 1, selectedDiseases: "Diabetes"};
 
 
 // Modify the navigateToMealInfo function to navigate to "MealInfo"

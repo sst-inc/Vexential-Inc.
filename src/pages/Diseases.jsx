@@ -35,18 +35,19 @@ disease.id === diseaseId ? { ...disease, selected: !disease.selected } : disease
 const selectedDiseases = diseases.filter((disease) => disease.selected);
 
 
+
 const handleNextPress = async () => {
-// Check if startup pages have been shown before
-const startupPagesShown = await AsyncStorage.getItem('startupPagesShown');
+  // Check if startup pages have been shown before
+  const startupPagesShown = await AsyncStorage.getItem('startupPagesShown');
 
 
-if (!startupPagesShown) {
-// If startup pages haven't been shown, navigate to them
-navigation.navigate('Languages'); // Start with the first startup page
-} else {
-// If startup pages have been shown, navigate to MealPlan
-navigation.navigate('MealPlan', { selectedDiseases });
-}
+  if (!startupPagesShown) {
+  // If startup pages haven't been shown, navigate to them
+  navigation.navigate('Languages'); // Start with the first startup page
+  } else {
+  // If startup pages have been shown, navigate to MealPlan
+  navigation.navigate('MealPlan', { selectedDiseases });
+  }
 };
 
 

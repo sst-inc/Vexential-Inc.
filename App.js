@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { View, Text } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage'; // Import AsyncStorage
@@ -19,48 +20,55 @@ const Stack = createNativeStackNavigator();
 
 
 const App = () => {
-const [showStartupPages, setShowStartupPages] = useState(true); // Initialize to true initially
+const [showStartupPages, setShowStartupPages] = useState(null); // Initialize to true initially
 
 
 useEffect(() => {
-// Check if startup pages should be shown based on AsyncStorage
-AsyncStorage.getItem('startupPagesShown').then((value) => {
-if (value === 'true') {
-setShowStartupPages(false);
-}
-});
+  // Check if startup pages should be shown based on AsyncStorage
+  AsyncStorage.getItem('startupPagesShown').then((value) => {
+    console.log(value)
+    if (value == 'true') {
+      setShowStartupPages(true)
+    } else {
+      setShowStartupPages(false)
+    }
+  });
 }, []);
 
 
-return (
-<NavigationContainer>
-<Stack.Navigator initialRouteName={showStartupPages ? 'Languages' : 'MealPlan'}>
-<Stack.Screen
-name="RecommendedMealPlan"
-component={RecommendedMealPlan}
-options={{ headerShown: false }}
-/>
-<Stack.Screen name="Diseases" component={DiseasesPage} />
-<Stack.Screen
-name="MealPlan"
-component={MealPlan}
-initialParams={{ selectedDiseases: [] }}
-options={{ headerShown: false }}
-/>
-<Stack.Screen name="Calendar" component={Calendar} options={{ headerShown: false }} />
-<Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
-<Stack.Screen name="NutritionGuide" component={NutritionGuide} options={{ headerShown: false }} />
-{showStartupPages && (
-<>
-<Stack.Screen name="Languages" component={LanguagesPage} options={{ headerShown: false }} />
-<Stack.Screen name="Instructions" component={InstructionsPage} />
-<Stack.Screen name="Age" component={AgePage} />
-</>
-)}
-<Stack.Screen name="MealInfo" component ={MealInfo} />
-</Stack.Navigator>
-</NavigationContainer>
-);
+if (showStartupPages != null) {
+  return(
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName={showStartupPages ? 'MealPlan' : 'Languages'}>
+        <Stack.Screen
+        name="RecommendedMealPlan"
+        component={RecommendedMealPlan}
+        options={{ headerShown: false }}
+        />
+        <Stack.Screen name="Diseases" component={DiseasesPage} />
+        <Stack.Screen
+        name="MealPlan"
+        component={MealPlan}
+        initialParams={{ selectedDiseases: [] }}
+        options={{ headerShown: false }}
+        />
+        <Stack.Screen name="Calendar" component={Calendar} options={{ headerShown: false }} />
+        <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
+        <Stack.Screen name="NutritionGuide" component={NutritionGuide} options={{ headerShown: false }} />
+        <Stack.Screen name="Languages" component={LanguagesPage} options={{ headerShown: false }} />
+        <Stack.Screen name="Instructions" component={InstructionsPage} />
+        <Stack.Screen name="Age" component={AgePage} />
+        <Stack.Screen name="MealInfo" component ={MealInfo} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+} else {
+  return(
+    <View>
+      <Text>Loading</Text>
+    </View>
+  )
+}
 };
 
 
