@@ -1,15 +1,106 @@
 {
-   "1": {"name": "Lentil and turkey stir-fry with quinoa", "stars": 2, "price": 0, "disease": "Diabetes", "image_uri": "https://i0.wp.com/sepcooks.com/wp-content/uploads/2021/07/3DD96B95-F1C8-40D2-99F9-74B73EF16957_1_201_a.jpeg?zoom=2&resize=665%2C435&ssl=1", "meal_time": "dinner"},
-   "2": {"name": "Shrimp and quinoa stir-fry with brown rice", "stars": 2, "price": 0, "disease": "Diabetes", "image_uri": "https://minuterice.com/wp-content/uploads/2019/05/Easy-Sesame-Hoisin-Shrimp-w-Quinoa.jpg.webp", "meal_time": "dinner"},
-   "3": {"name": "Tempeh and bell pepper stir-fry with quinoa", "stars": 2, "price": 0, "disease": "Diabetes", "image_uri": "https://kikkomanusa.com/homecooks/wp-content/uploads/2022/12/Tempeh-Quinoa-Stir-Fry_Kikkoman.png", "meal_time": "dinner"},
-   "4": {"name": "Mushroom and tofu stir-fry with brown rice", "stars": 3, "price": 0, "disease": "Diabetes", "image_uri": "https://cdn.squats.in/thumbnail/222592_FT_1210ac01-da61-4690-8f4a-c7b741e8b8d8.jpeg", "meal_time": "dinner"},
-   "5": {"name": "Mushrooms and tempeh stir-fry with quinoa", "stars": 3, "price": 0, "disease": "Diabetes", "image_uri": "https://starkel.wpenginepowered.com/wp-content/uploads/2018/09/31449ad4-dca8-4761-827b-03662d20429f.jpg", "meal_time": "dinner"},
-   "6": {"name": "Salmon and asparagus with quinoa", "stars": 4, "price": 0, "disease": "Diabetes", "image_uri": "http://tastendash.com/wp-content/uploads/Salmon-1.jpg", "meal_time": "dinner"},
-   "7": {"name": "Turkey and mushroom stir-fry with brown rice", "stars": 4, "price": 0, "disease": "Diabetes", "image_uri": "https://m.ftscrt.com/static/recipe/de491b41-b525-4019-9681-deede03bb5ce.jpg", "meal_time": "dinner"},
-   "8": {"name": "Whole wheat pasta with shrimp and bell peppers", "stars": 4, "price": 0, "disease": "Diabetes", "image_uri": "https://www.wellplated.com/wp-content/uploads/2018/10/Spicy-Shrimp-Pasta-with-red-sauce.jpg", "meal_time": "dinner"},
-   "9": {"name": "Chicken curry (with carrots) with brown rice", "stars": 5, "price": 0, "disease": "Diabetes", "image_uri": "https://babyfoode.com/wp-content/uploads/2019/07/curry_chicken_veggies-3-2.jpg", "meal_time": "dinner"},
-   "10": {"name": "Grilled fish and green beans with brown rice", "stars": 5, "price": 0, "disease": "Diabetes", "image_uri": "https://images.eatsmarter.com/sites/default/files/styles/576x432/public/grilled-swordfish-with-green-beans-and-rice-521100.jpg", "meal_time": "dinner"},
-   "11": {"name": "Grilled chicken and spinach with brown rice", "stars": 5, "price": 0, "disease": "Diabetes", "image_uri": "https://eatcleanbro.com/cdn/shop/products/4.-basics-with-spinach_2.png?v=1681220943&width=1920", "meal_time": "dinner"},
-   "12": {"name": "Grilled fish with green beans and lentils", "stars": 5, "price": 0, "disease": "Diabetes", "image_uri": "https://d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/g/201008r01.jpg/_jcr_content/renditions/cq5dam.thumbnail.200.200.png", "meal_time": "dinner"},
-   "13": {"name": "Whole wheat pasta with grilled chicken and bell peppers", "stars": 5, "price": 0, "disease": "Diabetes", "image_uri": "https://outgrilling.com/wp-content/uploads/2022/10/Grilled-Chicken-Spaghetti-Recipe-photo.jpg.webp", "meal_time": "dinner"}
+  "1": {
+    "name": "Lentil and turkey stir-fry with quinoa",
+    "stars": 2,
+    "price": 0,
+    "disease": "Diabetes",
+    "image_uri": "https://i0.wp.com/sepcooks.com/wp-content/uploads/2021/07/3DD96B95-F1C8-40D2-99F9-74B73EF16957_1_201_a.jpeg?zoom=2&resize=665%2C435&ssl=1",
+    "meal_time": "dinner"
+  },
+  "2": {
+    "name": "Shrimp and quinoa stir-fry with brown rice",
+    "stars": 2,
+    "price": 0,
+    "disease": "Diabetes",
+    "image_uri": "https://minuterice.com/wp-content/uploads/2019/05/Easy-Sesame-Hoisin-Shrimp-w-Quinoa.jpg.webp",
+    "meal_time": "dinner"
+  },
+  "3": {
+    "name": "Tempeh and bell pepper stir-fry with quinoa",
+    "stars": 2,
+    "price": 0,
+    "disease": "Diabetes",
+    "image_uri": "https://kikkomanusa.com/homecooks/wp-content/uploads/2022/12/Tempeh-Quinoa-Stir-Fry_Kikkoman.png",
+    "meal_time": "dinner"
+  },
+  "4": {
+    "name": "Mushroom and tofu stir-fry with brown rice",
+    "stars": 3,
+    "price": 0,
+    "disease": "Diabetes",
+    "image_uri": "https://cdn.squats.in/thumbnail/222592_FT_1210ac01-da61-4690-8f4a-c7b741e8b8d8.jpeg",
+    "meal_time": "dinner"
+  },
+  "5": {
+    "name": "Mushrooms and tempeh stir-fry with quinoa",
+    "stars": 3,
+    "price": 0,
+    "disease": "Diabetes",
+    "image_uri": "https://starkel.wpenginepowered.com/wp-content/uploads/2018/09/31449ad4-dca8-4761-827b-03662d20429f.jpg",
+    "meal_time": "dinner"
+  },
+  "6": {
+    "name": "Salmon and asparagus with quinoa",
+    "stars": 4,
+    "price": 0,
+    "disease": "Diabetes",
+    "image_uri": "http://tastendash.com/wp-content/uploads/Salmon-1.jpg",
+    "meal_time": "dinner"
+  },
+  "7": {
+    "name": "Turkey and mushroom stir-fry with brown rice",
+    "stars": 4,
+    "price": 0,
+    "disease": "Diabetes",
+    "image_uri": "https://m.ftscrt.com/static/recipe/de491b41-b525-4019-9681-deede03bb5ce.jpg",
+    "meal_time": "dinner"
+  },
+  "8": {
+    "name": "Whole wheat pasta with shrimp and bell peppers",
+    "stars": 4,
+    "price": 0,
+    "disease": "Diabetes",
+    "image_uri": "https://www.wellplated.com/wp-content/uploads/2018/10/Spicy-Shrimp-Pasta-with-red-sauce.jpg",
+    "meal_time": "dinner"
+  },
+  "9": {
+    "name": "Chicken curry (with carrots) with brown rice",
+    "stars": 5,
+    "price": 0,
+    "disease": "Diabetes",
+    "image_uri": "https://babyfoode.com/wp-content/uploads/2019/07/curry_chicken_veggies-3-2.jpg",
+    "meal_time": "dinner"
+  },
+  "10": {
+    "name": "Grilled fish and green beans with brown rice",
+    "stars": 5,
+    "price": 0,
+    "disease": "Diabetes",
+    "image_uri": "https://images.eatsmarter.com/sites/default/files/styles/576x432/public/grilled-swordfish-with-green-beans-and-rice-521100.jpg",
+    "meal_time": "dinner"
+  },
+  "11": {
+    "name": "Grilled chicken and spinach with brown rice",
+    "stars": 5,
+    "price": 0,
+    "disease": "Diabetes",
+    "image_uri": "https://eatcleanbro.com/cdn/shop/products/4.-basics-with-spinach_2.png?v=1681220943&width=1920",
+    "meal_time": "dinner"
+  },
+  "12": {
+    "name": "Grilled fish with green beans and lentils",
+    "stars": 5,
+    "price": 0,
+    "disease": "Diabetes",
+    "image_uri": "https://d1v30bmd12dhid.cloudfront.net/static/version6/content/dam/waitrose/recipes/images/g/201008r01.jpg/_jcr_content/renditions/cq5dam.thumbnail.200.200.png",
+    "meal_time": "dinner"
+  },
+  "13": {
+    "name": "Whole wheat pasta with grilled chicken and bell peppers",
+    "stars": 5,
+    "price": 0,
+    "disease": "Diabetes",
+    "image_uri": "https://outgrilling.com/wp-content/uploads/2022/10/Grilled-Chicken-Spaghetti-Recipe-photo.jpg.webp",
+    "meal_time": "dinner"
   }
+}
