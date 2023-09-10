@@ -18,9 +18,7 @@ const Calendar = () => {
       <StyledView className="flex-1 flex-col bg-blue-100 p-0 overflow-scroll">
         {/* Calendar Title */}
         <StyledView className="flex-row justify-center items-center p-4">
-          <StyledText className="text-black text-xl font-semibold">
-            Calendar
-          </StyledText>
+          <StyledText className="text-black text-xl font-semibold">Calendar</StyledText>
         </StyledView>
 
         {/* Top Row: Empty Space, Breakfast, Lunch, Dinner */}
@@ -34,14 +32,10 @@ const Calendar = () => {
             </StyledText>
           </StyledView>
           <StyledView className="w-60 h-[60px] rounded-2xl bg-white m-1 border border-gray-400 flex justify-center items-center">
-            <StyledText className="text-black font-semibold text-center text-lg">
-              LUNCH
-            </StyledText>
+            <StyledText className="text-black font-semibold text-center text-lg">LUNCH</StyledText>
           </StyledView>
           <StyledView className="w-60 h-[60px] rounded-2xl bg-white m-1 border border-gray-400 flex justify-center items-center">
-            <StyledText className="text-black font-semibold text-center text-lg">
-              DINNER
-            </StyledText>
+            <StyledText className="text-black font-semibold text-center text-lg">DINNER</StyledText>
           </StyledView>
         </StyledView>
 
@@ -70,4 +64,3 @@ const Calendar = () => {
 };
 
 export default Calendar;
-
