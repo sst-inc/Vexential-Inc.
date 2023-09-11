@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Text, View, Pressable, Image, FlatList } from 'react-native';
 import { styled } from 'nativewind';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Load your JSON data
 const breakfastData = require('../utils/data/breakfastFood.json');
@@ -14,9 +15,8 @@ const StyledPressable = styled(Pressable);
 
 const RecommendedMealPlan = ({ route }) => {
   const navigation = useNavigation();
-  const { dayNumber, selectedDiseases } = route.params
-    ? route.params
-    : { dayNumber: 1, selectedDiseases: 'Diabetes' };
+  const { dayNumber, selectedDiseases } = route.params;
+  const [mealData, setMealData] = useState([]);
 
   // Modify the navigateToMealInfo function to navigate to "MealInfo"
   const navigateToMealInfo = (meal) => {
@@ -25,9 +25,8 @@ const RecommendedMealPlan = ({ route }) => {
     });
   };
 
-  const [mealData, setMealData] = useState([]);
 
-  const chooseRandomFood = (foodChoices) => {
+  const chooseRandomFood = async (foodChoices) => {
     function getRandomItem(obj) {
       const keys = Object.keys(obj);
       const randomKey = keys[Math.floor(Math.random() * keys.length)];
@@ -52,23 +51,22 @@ const RecommendedMealPlan = ({ route }) => {
         meal: foodChosenForDinner
       }
     ];
-
+    // TODO: Create a better data structure and fix any downstream issues. 
+    await AsyncStorage.setItem(String(dayNumber), JSON.stringify(result))
     setMealData(result);
   };
 
   useEffect(() => {
-    if (mealData.length === 0) {
-      const diseaseIds = Object.values(selectedDiseases).map((disease) => disease.id);
-
-      const filteredBreakfast = Object.values(breakfastData).filter((meal) =>
-        diseaseIds.includes(meal.disease)
-      );
-      const filteredLunch = Object.values(lunchData).filter((meal) =>
-        diseaseIds.includes(meal.disease)
-      );
-      const filteredDinner = Object.values(dinnerData).filter((meal) =>
-        diseaseIds.includes(meal.disease)
-      );
+    var diseases = null
+    const getDiseases = async() => {
+      const data = await AsyncStorage.getItem('diseases')
+      diseases = await JSON.parse(data)
+    }
+    const getRandomFood = async() => {
+      await getDiseases()
+      const filteredBreakfast = Object.values(breakfastData).filter((meal) => meal.disease === diseases[0].name);
+      const filteredLunch = Object.values(lunchData).filter((meal) => meal.disease === diseases[0].name);
+      const filteredDinner = Object.values(dinnerData).filter((meal) => meal.disease === diseases[0].name);
 
       const filteredFoodChoices = {
         breakfast: filteredBreakfast,
@@ -78,7 +76,24 @@ const RecommendedMealPlan = ({ route }) => {
 
       chooseRandomFood(filteredFoodChoices);
     }
-  }, [mealData, breakfastData, lunchData, dinnerData, selectedDiseases]);
+
+    const checkFood = async() => {
+      let data = await AsyncStorage.getItem(String(dayNumber))
+      let food = await JSON.parse(data)
+      
+      if (!food) {
+        getRandomFood()
+      } else {
+        setMealData(food)
+      }
+    }
+
+    checkFood()
+    // const removeMe = async() => {
+    //   await AsyncStorage.removeItem(String(dayNumber))
+    // }
+    // removeMe()
+  },[]);
 
   const renderItem = ({ item }) => (
     <View
@@ -89,7 +104,8 @@ const RecommendedMealPlan = ({ route }) => {
         backgroundColor: '#C4E5F8',
         borderWidth: 1,
         borderColor: 'gray'
-      }}>
+      }}
+    >
       <Text style={{ color: 'black', fontSize: 20, fontWeight: 'bold', padding: 16 }}>
         {item.meal ? item.meal.name : `No ${item.title.toLowerCase()}`}
       </Text>
@@ -115,7 +131,8 @@ const RecommendedMealPlan = ({ route }) => {
           left: 5,
           justifyContent: 'center',
           alignItems: 'center'
-        }}>
+        }}
+      >
         <Text style={{ color: 'black', fontSize: 16, fontWeight: 'bold' }}>Details</Text>
       </Pressable>
     </View>
@@ -129,7 +146,8 @@ const RecommendedMealPlan = ({ route }) => {
     <StyledView className="flex-1 flex-col bg-blue-100 p-0">
       <StyledPressable
         className="w-[142px] h-[50px] rounded-md bg-[#F5FAFE] border border-[#00A3FF] absolute top-5 left-5 flex justify-center items-center"
-        onPress={() => navigation.goBack()}>
+        onPress={() => navigation.goBack()}
+      >
         <StyledText className="text-black text-base font-semibold">&lt; back</StyledText>
       </StyledPressable>
 

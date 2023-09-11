@@ -1,15 +1,33 @@
-import React, { useState } from 'react';
-import { Text, View, Pressable } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Text, View, Pressable, FlatList } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { styled } from 'nativewind';
 import Sidebar from '../components/Sidebar';
+import DiseasesPage from './Diseases';
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 const StyledView = styled(View);
 const StyledText = styled(Text);
 const StyledPressable = styled(Pressable);
 
-const Profile = () => {
+const Profile = ({ route }) => {
+
+  navigation = useNavigation()
+
   const languages = ['English', 'Mandarin', 'Malay', 'Tamil'];
+  const [selectedDiseases, setSelectedDiseases] = useState([{name: null}])
   const [selectedLanguageIndex, setSelectedLanguageIndex] = useState(0);
+  useEffect(() => {
+    const getDiseases = async() => {
+      const data = await AsyncStorage.getItem('diseases')
+      const diseases = JSON.parse(data)
+      console.log(diseases)
+      setSelectedDiseases(diseases)
+    }
+    
+    getDiseases()
+  },[])
+
 
   const changeLanguage = () => {
     setSelectedLanguageIndex((selectedLanguageIndex + 1) % languages.length);
@@ -76,9 +94,15 @@ const Profile = () => {
                 </StyledText>
               </StyledView>
               <StyledView className="w-[554px] h-[64px] bg-white flex justify-center items-center ml-0">
-                <StyledText className="text-black text-base font-semibold">_,_,_</StyledText>
+                <FlatList 
+                  className='flex flex-row text-center'
+                  data={selectedDiseases}
+                  renderItem={({item}) => <StyledText className="text-black text-base font-semibold self-center">{item.name}</StyledText>}
+                />
               </StyledView>
-              <StyledPressable className="w-[118px] h-[64px] ml-2 rounded-md bg-[#CEE5EC] flex justify-center items-center">
+              <StyledPressable className="w-[118px] h-[64px] ml-2 rounded-md bg-[#CEE5EC] flex justify-center items-center"
+              onPress={() => navigation.navigate('Diseases')}
+              >
                 <StyledText className="text-black text-base font-semibold">Change</StyledText>
               </StyledPressable>
             </StyledView>

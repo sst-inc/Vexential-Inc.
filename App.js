@@ -22,8 +22,9 @@ const App = () => {
 
   useEffect(() => {
     // Check if startup pages should be shown based on AsyncStorage
+
     AsyncStorage.getItem('startupPagesShown').then((value) => {
-      console.log(value);
+
       if (value == 'true') {
         setShowStartupPages(true);
       } else {
@@ -36,6 +37,7 @@ const App = () => {
     return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName={showStartupPages ? 'MealPlan' : 'Languages'}>
+
           <Stack.Screen
             name="RecommendedMealPlan"
             component={RecommendedMealPlan}

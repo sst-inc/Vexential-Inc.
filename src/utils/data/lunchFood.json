@@ -39,22 +39,6 @@
     "image_uri": "https://img.taste.com.au/hQTQOlEO/w720-h480-cfill-q80/taste/2016/11/chicken-spinach-and-chickpea-salad-13284-1.jpeg",
     "meal_time": "lunch"
   },
-  "6": {
-    "name": "Chicken and asparagus salad with black beans",
-    "stars": 3,
-    "price": 0,
-    "disease": "Diabetes",
-    "image_uri": "",
-    "meal_time": "lunch"
-  },
-  "7": {
-    "name": "Beef and cabbage stir-fry with lentils",
-    "stars": 4,
-    "price": 0,
-    "disease": "Diabetes",
-    "image_uri": "",
-    "meal_time": "lunch"
-  },
   "8": {
     "name": "Broccoli and tofu stir-fry with brown rice",
     "stars": 4,
@@ -101,6 +85,166 @@
     "price": 0,
     "disease": "Diabetes",
     "image_uri": "https://confessionsofafitfoodie.com/wp-content/uploads/2023/01/Ground-Chicken-Stir-Fry-.jpeg",
+    "meal_time": "lunch"
+  },
+  "14": {
+    "name": "Black bean and mushroom soup with a side of mixed greens (Bell peppers, long beans, and bean sprouts)",
+    "stars": 2,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://addapinch.com/wp-content/uploads/2017/10/mushroom-black-bean-soup-recipe-0020.jpg",
+    "meal_time": "lunch"
+  },  
+  "15": {
+    "name": "Chickpea and bell pepper curry with a side of brown rice",
+    "stars": 2,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://www.sleekgeek.co.za/wp-content/uploads/2018/09/recipe-chickpeas-curry.jpg",
+    "meal_time": "lunch"
+  },  
+  "16": {
+    "name": "Eggplant and black bean stir-fry with brown rice",
+    "stars": 2,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://proveg.com/us/wp-content/uploads/sites/9/2021/06/ezgif.com-gif-maker-8-2.jpg",
+    "meal_time": "lunch"
+  },  
+  "17": {
+    "name": "Lentil and turkey stir-fry with quino",
+    "stars": 2,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://i0.wp.com/sepcooks.com/wp-content/uploads/2021/07/3DD96B95-F1C8-40D2-99F9-74B73EF16957_1_201_a.jpeg?zoom=2&resize=665%2C435&ssl=1",
+    "meal_time": "lunch"
+  },  
+  "18": {
+    "name": "Shrimp and quinoa stir-fry with brown rice",
+    "stars": 2,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://minuterice.com/wp-content/uploads/2019/05/Easy-Sesame-Hoisin-Shrimp-w-Quinoa.jpg.webp",
+    "meal_time": "lunch"
+  },  
+  "19": {
+    "name": "Eggplant and lentil stir-fry with brown rice",
+    "stars": 3,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://a-la-damaris.com/wp-content/uploads/2022/01/linzen-en-rijst-copy-800x530.jpg.webp",
+    "meal_time": "lunch"
+  },  
+  "20": {
+    "name": "Mushroom and tofu stir-fry with brown rice",
+    "stars": 3,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://cdn.squats.in/thumbnail/222592_FT_1210ac01-da61-4690-8f4a-c7b741e8b8d8.jpeg",
+    "meal_time": "lunch"
+  },  
+  "21": {
+    "name": "Beef and cabbage stir-fry with brown rice",
+    "stars": 4,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://www.saltandlavender.com/wp-content/uploads/2020/09/beef-and-cabbage-stir-fry-2.jpg",
+    "meal_time": "lunch"
+  },  
+  "22": {
+    "name": "Broccoli and tofu stir-fry with brown rice",
+    "stars": 4,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://www.myplantifulcooking.com/wp-content/uploads/2020/11/vegan-asian-tofu-broccoli-mushroom-stir-fry-2.jpg",
+    "meal_time": "lunch"
+  },  
+  "23": {
+    "name": "Bok choy and tofu stir-fry with brown rice",
+    "stars": 4,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://naturallyella.com/wp-content/uploads/2019/05/crispy_bok_choy-bowls-1.jpg",
+    "meal_time": "lunch"
+  }, 
+  "24": {
+    "name": "Beef and broccoli fried rice",
+    "stars": 4,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://tiffycooks.com/wp-content/uploads/2022/04/FullSizeRender-221-1152x1536.jpg",
+    "meal_time": "lunch"
+  }, 
+  "25": {
+    "name": "Chickpea and chicken salad with spinach",
+    "stars": 4,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://img.taste.com.au/hQTQOlEO/w720-h480-cfill-q80/taste/2016/11/chicken-spinach-and-chickpea-salad-13284-1.jpeg",
+    "meal_time": "lunch"
+  }, 
+  "26": {
+    "name": "Chicken and broccoli with carrots rice bowl",
+    "stars": 4,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://homemadelovely.com/wp-content/uploads/2018/04/honey-garlic-chicken-and-veggie-stir-fry.jpg",
+    "meal_time": "lunch"
+  }, 
+  "27": {
+    "name": "Tofu and asparagus stir-fry with brown rice",
+    "stars": 4,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://www.cookshideout.com/wp-content/uploads/2017/03/Sesame-Tofu-with-Asparagus_9S.jpg",
+    "meal_time": "lunch"
+  }, 
+  "28": {
+    "name": "Beef and broccoli stir-fry with whole wheat noodles",
+    "stars": 5,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://therecipecritic.com/wp-content/uploads/2017/08/beeflomein2.jpg",
+    "meal_time": "lunch"
+  }, 
+  "29": {
+    "name": "Bell pepper stuffed with brown rice and grilled chicken",
+    "stars": 5,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://lecoupdegrace.ca/app/uploads/2023/03/poivrons-farcis-avec-riz-aux-legumes-et-au-poulet-bbq-grille-inpage.jpg",
+    "meal_time": "lunch"
+  }, 
+  "30": {
+    "name": "Bell pepper stuffed with quinoa and ground turkey/beef",
+    "stars": 5,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://theheirloompantry.co/wp-content/uploads/2022/08/turkey-and-quinoa-stuffed-bell-peppers-without-rice-the-heirloom-pantry-03.jpg",
+    "meal_time": "lunch"
+  }, 
+  "31": {
+    "name": "Bok choy and chicken stir-fry with brown rice",
+    "stars": 5,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F19%2F2004%2F02%2F18%2Fchicken-rice-ck-592352-x.jpg",
+    "meal_time": "lunch"
+  }, 
+  "32": {
+    "name": "Chicken and collard greens stir-fry with brown rice",
+    "stars": 5,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "http://palmettogardens.net/media/1085/chicken-collard-greens-stir-fry_1050.jpg",
+    "meal_time": "lunch"
+  },
+  "33": {
+    "name": "Collard greens and chicken breast with wild rice",
+    "stars": 5,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://berocketfuel.com/cdn/shop/products/madrid_5.jpg?v=1569307582",
     "meal_time": "lunch"
   }
 }

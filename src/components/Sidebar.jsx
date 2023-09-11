@@ -3,29 +3,15 @@ import { View, Button, Pressable, Text, Image } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import Svg, { Path } from 'react-native-svg';
 
-const Sidebar = () => {
+const Sidebar = ({ dayNumber, selectedDiseases }) => {
   const navigation = useNavigation();
   const route = useRoute();
 
-  const getData = async () => {
-    const response = fetch('http://192.168.155.82:5000/food/?food=1', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    response.then(async (data) => {
-      let json_data = await data.json();
-      console.log(json_data);
-    });
-  };
   return (
     <View className="w-[200] h-full bg-blue-100 py-10 flex flex-col items-center">
       <Pressable
         onPress={() => {
-          console.log(route);
           navigation.navigate('MealPlan');
-          getData();
         }}
         className="py-3 flex flex-col my-10 justify-center">
         <Image
@@ -40,7 +26,7 @@ const Sidebar = () => {
       <View className="py-8">
         <Pressable
           onPress={() => {
-            navigation.navigate('Calendar');
+            navigation.navigate('Calendar', {dayNumber});
           }}
           className="flex flex-row justify-center">
           <View className="flex flex-col">
@@ -76,7 +62,7 @@ const Sidebar = () => {
       <View className="py-8">
         <Pressable
           onPress={() => {
-            navigation.navigate('NutritionGuide');
+            navigation.navigate('NutritionGuide', { selectedDiseases });
           }}
           className="flex flex-row justify-center">
           <View className="flex flex-col">
