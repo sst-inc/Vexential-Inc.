@@ -19,7 +19,7 @@ const MealPlan = ({ route }) => {
     navigation.navigate('RecommendedMealPlan', { dayNumber, selectedDiseases });
   };
 
-  const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
   return (
     <StyledView className="flex-1 flex-row bg-blue-100 items-center justify-start">
@@ -38,7 +38,7 @@ const MealPlan = ({ route }) => {
           <StyledPressable
             key={i}
             className={`flex-col w-[1000] h-[85] rounded-full items-center justify-between mt-3 ${
-              i === ((currentDay - 1) % 7) ? 'bg-gray-400' : 'bg-blue-300'
+              i === (currentDay) ? 'bg-gray-400' : 'bg-blue-300'
             }`}
             onPress={() => navigateToRecommendedPlan(i + 1, selectedDiseases)}
           >
