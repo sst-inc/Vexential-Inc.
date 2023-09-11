@@ -14,9 +14,7 @@ const StyledPressable = styled(Pressable);
 
 const RecommendedMealPlan = ({ route }) => {
   const navigation = useNavigation();
-  const { dayNumber, selectedDiseases } = route.params
-    ? route.params
-    : { dayNumber: 1, selectedDiseases: 'Diabetes' };
+  const { dayNumber, selectedDiseases } = route.params;
 
   // Modify the navigateToMealInfo function to navigate to "MealInfo"
   const navigateToMealInfo = (meal) => {
@@ -58,17 +56,20 @@ const RecommendedMealPlan = ({ route }) => {
 
   useEffect(() => {
     if (mealData.length === 0) {
-      const diseaseIds = Object.values(selectedDiseases).map((disease) => disease.id);
+      const diseaseIds = selectedDiseases[0].id; // Access the id property directly
 
       const filteredBreakfast = Object.values(breakfastData).filter((meal) =>
-        diseaseIds.includes(meal.disease)
-      );
-      const filteredLunch = Object.values(lunchData).filter((meal) =>
-        diseaseIds.includes(meal.disease)
-      );
+  meal.disease === diseaseIds
+);
+
+      
+const filteredLunch = Object.values(lunchData).filter((meal) =>
+meal.disease === diseaseIds
+);
+
       const filteredDinner = Object.values(dinnerData).filter((meal) =>
-        diseaseIds.includes(meal.disease)
-      );
+  meal.disease === diseaseIds
+);
 
       const filteredFoodChoices = {
         breakfast: filteredBreakfast,
@@ -89,7 +90,8 @@ const RecommendedMealPlan = ({ route }) => {
         backgroundColor: '#C4E5F8',
         borderWidth: 1,
         borderColor: 'gray'
-      }}>
+      }}
+    >
       <Text style={{ color: 'black', fontSize: 20, fontWeight: 'bold', padding: 16 }}>
         {item.meal ? item.meal.name : `No ${item.title.toLowerCase()}`}
       </Text>
@@ -115,7 +117,8 @@ const RecommendedMealPlan = ({ route }) => {
           left: 5,
           justifyContent: 'center',
           alignItems: 'center'
-        }}>
+        }}
+      >
         <Text style={{ color: 'black', fontSize: 16, fontWeight: 'bold' }}>Details</Text>
       </Pressable>
     </View>
@@ -129,7 +132,8 @@ const RecommendedMealPlan = ({ route }) => {
     <StyledView className="flex-1 flex-col bg-blue-100 p-0">
       <StyledPressable
         className="w-[142px] h-[50px] rounded-md bg-[#F5FAFE] border border-[#00A3FF] absolute top-5 left-5 flex justify-center items-center"
-        onPress={() => navigation.goBack()}>
+        onPress={() => navigation.goBack()}
+      >
         <StyledText className="text-black text-base font-semibold">&lt; back</StyledText>
       </StyledPressable>
 

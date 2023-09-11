@@ -102,5 +102,125 @@
     "disease": "Diabetes",
     "image_uri": "https://outgrilling.com/wp-content/uploads/2022/10/Grilled-Chicken-Spaghetti-Recipe-photo.jpg.webp",
     "meal_time": "dinner"
+  },
+  "14": {
+    "name": "Tempeh and bell pepper stir-fry with quinoa",
+    "stars": 2,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://kikkomanusa.com/homecooks/wp-content/uploads/2022/12/Tempeh-Quinoa-Stir-Fry_Kikkoman.png",
+    "meal_time": "dinner"
+  }, 
+  "15": {
+    "name": "Mushrooms and tempeh stir-fry with quinoa",
+    "stars": 3,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://starkel.wpenginepowered.com/wp-content/uploads/2018/09/31449ad4-dca8-4761-827b-03662d20429f.jpg",
+    "meal_time": "dinner"
+  }, 
+  "16": {
+    "name": "Seared salmon with a salad of watercress and beets",
+    "stars": 3,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://www.savoryonline.com/app/uploads/recipes/68013/baked-salmon-with-beet-and-watercress-mash-1256x1256-c-default.png",
+    "meal_time": "dinner"
+  }, 
+  "17": {
+    "name": "Turkey and mushroom stir-fry with brown rice",
+    "stars": 4,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://m.ftscrt.com/static/recipe/de491b41-b525-4019-9681-deede03bb5ce.jpg",
+    "meal_time": "dinner"
+  }, 
+  "18": {
+    "name": "Whole wheat pasta with shrimp and bell peppers",
+    "stars": 4,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://www.wellplated.com/wp-content/uploads/2018/10/Spicy-Shrimp-Pasta-with-red-sauce.jpg",
+    "meal_time": "dinner"
+  }, 
+  "19": {
+    "name": "Baked salmon with a side of asparagus and quinoa",
+    "stars": 5,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://chefjulieyoon.com/wp-content/uploads/2015/01/SalmonQuinoaAsparagus-35.jpg",
+    "meal_time": "dinner"
+  }, 
+  "20": {
+    "name": "Baked whitefish with Brussels sprouts and brown rice",
+    "stars": 5,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://marleyspoon.com/media/recipes/72062/main_photos/large/lemon_brown_butter_salmon-2e6b963bc63030faecb97d7918d6adc2.jpeg",
+    "meal_time": "dinner"
+  }, 
+  "21": {
+    "name": "Chicken and asparagus stir-fry with brown rice",
+    "stars": 5,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://cdn5.projectmealplan.com/wp-content/uploads/2017/09/spicy-chicken-green-veggie-rice-bowl-meal-prep-hero-400x400.jpg",
+    "meal_time": "dinner"
+  }, 
+  "22": {
+    "name": "Chicken and green bean stir-fry with brown rice",
+    "stars": 5,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://confessionsofafitfoodie.com/wp-content/uploads/2023/01/Ground-Chicken-Stir-Fry-.jpeg",
+    "meal_time": "dinner"
+  }, 
+  "23": {
+    "name": "Grilled salmon and green beans with brown rice",
+    "stars": 5,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://mysingleservingblog.files.wordpress.com/2010/06/salmon-and-rice.jpg?w=900&h=596",
+    "meal_time": "dinner"
+  }, 
+  "24": {
+    "name": "Grilled chicken and spinach with brown rice",
+    "stars": 5,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://eatcleanbro.com/cdn/shop/products/4.-basics-with-spinach_2.png?v=1681220943&width=1920",
+    "meal_time": "dinner"
+  }, 
+  "25": {
+    "name": "Grilled salmon with watercress and quinoa",
+    "stars": 5,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://images.squarespace-cdn.com/content/v1/5b3ca9e8710699a5690b4a7f/1642522024464-JWUXQE03T2HLK1CYKD2J/thai-salmon-watercress-quinoa-salad-7179.jpg?format=2500w",
+    "meal_time": "dinner"
+  }, 
+  "26": {
+    "name": "Salmon and asparagus with quinoa",
+    "stars": 5,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "http://tastendash.com/wp-content/uploads/Salmon-1.jpg",
+    "meal_time": "dinner"
+  }, 
+  "27": {
+    "name": "Salmon and mixed greens wrap with whole grain tortillas",
+    "stars": 5,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://hungryhealthyhappy.com/wp-content/uploads/2021/07/Salmon-Wrap-finished-1.jpg",
+    "meal_time": "dinner"
+  }, 
+  "28": {
+    "name": "Whole wheat pasta with grilled chicken and bell peppers",
+    "stars": 5,
+    "price": 0,
+    "disease": "HighBloodPressure",
+    "image_uri": "https://outgrilling.com/wp-content/uploads/2022/10/Grilled-Chicken-Spaghetti-Recipe-photo.jpg.webp",
+    "meal_time": "dinner"
   }
 }

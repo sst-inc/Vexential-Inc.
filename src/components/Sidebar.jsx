@@ -3,7 +3,7 @@ import { View, Button, Pressable, Text, Image } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import Svg, { Path } from 'react-native-svg';
 
-const Sidebar = () => {
+const Sidebar = ({ selectedDiseases }) => {
   const navigation = useNavigation();
   const route = useRoute();
 
@@ -76,7 +76,7 @@ const Sidebar = () => {
       <View className="py-8">
         <Pressable
           onPress={() => {
-            navigation.navigate('NutritionGuide');
+            navigation.navigate('NutritionGuide', { selectedDiseases });
           }}
           className="flex flex-row justify-center">
           <View className="flex flex-col">
