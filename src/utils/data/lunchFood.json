@@ -39,22 +39,6 @@
     "image_uri": "https://img.taste.com.au/hQTQOlEO/w720-h480-cfill-q80/taste/2016/11/chicken-spinach-and-chickpea-salad-13284-1.jpeg",
     "meal_time": "lunch"
   },
-  "6": {
-    "name": "Chicken and asparagus salad with black beans",
-    "stars": 3,
-    "price": 0,
-    "disease": "Diabetes",
-    "image_uri": "",
-    "meal_time": "lunch"
-  },
-  "7": {
-    "name": "Beef and cabbage stir-fry with lentils",
-    "stars": 4,
-    "price": 0,
-    "disease": "Diabetes",
-    "image_uri": "",
-    "meal_time": "lunch"
-  },
   "8": {
     "name": "Broccoli and tofu stir-fry with brown rice",
     "stars": 4,

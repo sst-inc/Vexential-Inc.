@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Text, View, ScrollView } from 'react-native';
 import { styled } from 'nativewind';
 import Sidebar from '../components/Sidebar';
 import { useRoute } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const StyledView = styled(View);
 const StyledText = styled(Text);
@@ -13,14 +14,24 @@ const NutritionGuide = () => {
   // Access selectedDiseases from route.params
   const selectedDiseases = route.params?.selectedDiseases || [];
 
+  useEffect(() => {
+    var diseases = null
+    const getDiseases = async() => {
+      const data = await AsyncStorage.getItem('diseases')
+      diseases = await JSON.parse(data)
+      console.log(diseases[0].id)
+    }
+    getDiseases()
+  },[])
+
   // Function to generate content based on selected diseases
   const generateContent = () => {
-    return selectedDiseases.map((disease) => {
-      switch (disease.id) {
-        case 'diabetes':
+    return selectedDiseases.map(() => {
+      switch (diseases[0].id) {
+        case 'Diabetes':
           return (
-            <View key={disease.id}>
-              <StyledText className="text-black text-base font-semibold">{disease.name}</StyledText>
+            <View>
+              <StyledText className="text-black text-base font-semibold">{diseases[0].id}</StyledText>
               <StyledText>
                 What is Diabetes?
                 {/* Add your diabetes content here */}
@@ -28,10 +39,10 @@ const NutritionGuide = () => {
               {/* Add the rest of the content for diabetes */}
             </View>
           );
-        case 'highBloodPressure':
+        case 'HighBloodPressure':
           return (
-            <View key={disease.id}>
-              <StyledText className="text-black text-base font-semibold">{disease.name}</StyledText>
+            <View key={diseases[0].id}>
+              <StyledText className="text-black text-base font-semibold">{diseases[0].name}</StyledText>
               <StyledText>
                 What is High Blood Pressure (Hypertension)?
                 {/* Add your high blood pressure content here */}

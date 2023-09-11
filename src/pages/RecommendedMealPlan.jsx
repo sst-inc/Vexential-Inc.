@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Text, View, Pressable, Image, FlatList } from 'react-native';
 import { styled } from 'nativewind';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Load your JSON data
 const breakfastData = require('../utils/data/breakfastFood.json');
@@ -15,6 +16,7 @@ const StyledPressable = styled(Pressable);
 const RecommendedMealPlan = ({ route }) => {
   const navigation = useNavigation();
   const { dayNumber, selectedDiseases } = route.params;
+  const [mealData, setMealData] = useState([]);
 
   // Modify the navigateToMealInfo function to navigate to "MealInfo"
   const navigateToMealInfo = (meal) => {
@@ -23,9 +25,8 @@ const RecommendedMealPlan = ({ route }) => {
     });
   };
 
-  const [mealData, setMealData] = useState([]);
 
-  const chooseRandomFood = (foodChoices) => {
+  const chooseRandomFood = async (foodChoices) => {
     function getRandomItem(obj) {
       const keys = Object.keys(obj);
       const randomKey = keys[Math.floor(Math.random() * keys.length)];
@@ -50,26 +51,22 @@ const RecommendedMealPlan = ({ route }) => {
         meal: foodChosenForDinner
       }
     ];
-
+    // TODO: Create a better data structure and fix any downstream issues. 
+    await AsyncStorage.setItem(String(dayNumber), JSON.stringify(result))
     setMealData(result);
   };
 
   useEffect(() => {
-    if (mealData.length === 0) {
-      const diseaseIds = selectedDiseases[0].id; // Access the id property directly
-
-      const filteredBreakfast = Object.values(breakfastData).filter((meal) =>
-  meal.disease === diseaseIds
-);
-
-      
-const filteredLunch = Object.values(lunchData).filter((meal) =>
-meal.disease === diseaseIds
-);
-
-      const filteredDinner = Object.values(dinnerData).filter((meal) =>
-  meal.disease === diseaseIds
-);
+    var diseases = null
+    const getDiseases = async() => {
+      const data = await AsyncStorage.getItem('diseases')
+      diseases = await JSON.parse(data)
+    }
+    const getRandomFood = async() => {
+      await getDiseases()
+      const filteredBreakfast = Object.values(breakfastData).filter((meal) => meal.disease === diseases[0].name);
+      const filteredLunch = Object.values(lunchData).filter((meal) => meal.disease === diseases[0].name);
+      const filteredDinner = Object.values(dinnerData).filter((meal) => meal.disease === diseases[0].name);
 
       const filteredFoodChoices = {
         breakfast: filteredBreakfast,
@@ -79,7 +76,24 @@ meal.disease === diseaseIds
 
       chooseRandomFood(filteredFoodChoices);
     }
-  }, [mealData, breakfastData, lunchData, dinnerData, selectedDiseases]);
+
+    const checkFood = async() => {
+      let data = await AsyncStorage.getItem(String(dayNumber))
+      let food = await JSON.parse(data)
+      
+      if (!food) {
+        getRandomFood()
+      } else {
+        setMealData(food)
+      }
+    }
+
+    checkFood()
+    // const removeMe = async() => {
+    //   await AsyncStorage.removeItem(String(dayNumber))
+    // }
+    // removeMe()
+  },[]);
 
   const renderItem = ({ item }) => (
     <View

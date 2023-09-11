@@ -25,13 +25,19 @@ const DiseasesPage = () => {
     );
   };
 
+  const updateDisease = async (selectedDiseases) => {
+    await AsyncStorage.setItem('diseases', selectedDiseases)
+  }
+
   const selectedDiseases = diseases.filter((disease) => disease.selected);
+  
+  updateDisease(JSON.stringify(selectedDiseases))
 
   const handleNextPress = async () => {
     // Check if startup pages have been shown before
     await AsyncStorage.setItem('startupPagesShown', 'true');
     const startupPagesShown = await AsyncStorage.getItem('startupPagesShown');
-    console.log('Selected Diseases:', selectedDiseases);
+    //  console.log('Selected Diseases:', selectedDiseases);
 
     if (!startupPagesShown) {
       // If startup pages haven't been shown, navigate to 'Languages'
@@ -80,5 +86,6 @@ onPress={handleNextPress}>
     </ImageBackground>
   );
 };
+
 
 export default DiseasesPage;

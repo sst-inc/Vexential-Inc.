@@ -8,11 +8,14 @@ const StyledView = styled(View);
 const StyledText = styled(Text);
 const StyledPressable = styled(Pressable);
 
+const date = new Date();
+let currentDay = date.getDay()
+
 const MealPlan = ({ route }) => {
   const navigation = useNavigation();
   const { dayNumber, selectedDiseases } = route.params;
 
-  const navigateToRecommendedPlan = (dayNumber) => {
+  const navigateToRecommendedPlan = (dayNumber, selectedDiseases) => {
     navigation.navigate('RecommendedMealPlan', { dayNumber, selectedDiseases });
   };
 
@@ -35,7 +38,7 @@ const MealPlan = ({ route }) => {
           <StyledPressable
             key={i}
             className={`flex-col w-[1000] h-[85] rounded-full items-center justify-between mt-3 ${
-              i === 0 ? 'bg-gray-400' : 'bg-blue-300'
+              i === ((currentDay - 1) % 7) ? 'bg-gray-400' : 'bg-blue-300'
             }`}
             onPress={() => navigateToRecommendedPlan(i + 1, selectedDiseases)}
           >

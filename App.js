@@ -36,8 +36,8 @@ const App = () => {
   if (showStartupPages != null) {
     return (
       <NavigationContainer>
-        {/*<Stack.Navigator initialRouteName={showStartupPages ? 'MealPlan' : 'Languages'}>*/}
-        <Stack.Navigator initialRouteName={'Languages'}>
+        <Stack.Navigator initialRouteName={showStartupPages ? 'MealPlan' : 'Languages'}>
+
           <Stack.Screen
             name="RecommendedMealPlan"
             component={RecommendedMealPlan}
