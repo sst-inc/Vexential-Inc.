@@ -9,7 +9,7 @@ const StyledText = styled(Text);
 const StyledPressable = styled(Pressable);
 
 const date = new Date();
-let currentDay = date.getDay()
+let currentDay = date.getDay();
 
 const MealPlan = ({ route }) => {
   const navigation = useNavigation();
@@ -36,17 +36,28 @@ const MealPlan = ({ route }) => {
         {/* Loop through the days of the week */}
         {daysOfWeek.map((day, i) => (
           <StyledPressable
-            key={i}
-            className={`flex-col w-[1000] h-[85] rounded-full items-center justify-between mt-3 ${
-              i === (currentDay) ? 'bg-gray-400' : 'bg-blue-300'
-            }`}
-            onPress={() => navigateToRecommendedPlan(i + 1, selectedDiseases)}
-          >
-            <StyledView className="w-full flex-row justify-center items-center px-5 text-center self-center">
-              <StyledText key={i} className={`text-3xl font-normal self-center ${
-              i === 0 ? 'text-white-200' : 'text-black-300'}`}>{day}</StyledText>
-            </StyledView>
-          </StyledPressable>
+          key={i}
+          className={`flex-col w-[1000] h-[85] rounded-full items-center justify-between mt-3 ${
+            i === (currentDay) ? 'bg-blue-300' : 'bg-gray-400'
+          }`}
+          style={{
+            alignItems: 'center', // Center vertically
+            justifyContent: 'center', // Center horizontally
+            height: '11.5%', // Ensure full height of the pressable is used
+          }}
+          onPress={() => navigateToRecommendedPlan(i + 1, selectedDiseases)}
+        >
+          <StyledView className="w-full flex-row justify-center items-center px-5 text-center">
+            <StyledText
+              key={i}
+              className={`text-5xl font-normal text-center ${
+                i === 0 ? 'text-white-200' : 'text-black-300'
+              }`}
+            >
+              {day}
+            </StyledText>
+          </StyledView>
+        </StyledPressable>
         ))}
       </StyledView>
     </StyledView>

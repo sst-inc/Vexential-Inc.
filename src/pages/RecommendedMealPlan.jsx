@@ -54,6 +54,7 @@ const RecommendedMealPlan = ({ route }) => {
     // TODO: Create a better data structure and fix any downstream issues. 
     await AsyncStorage.setItem(String(dayNumber), JSON.stringify(result))
     setMealData(result);
+
   };
 
   useEffect(() => {
