@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 import { styled } from 'nativewind';
@@ -14,22 +12,10 @@ const PageWithNavbar = ({ children }) => {
     <StyledView style={{ flexDirection: 'row' }}>
       {/* Sidebar */}
       <StyledView style={{ width: 44, height: '100%', backgroundColor: 'blue' }}>
-        <Button
-          title="Meal Plan"
-          onPress={() => navigation.navigate('MealPlan')}
-        />
-        <Button
-          title="Calendar"
-          onPress={() => navigation.navigate('Calendar')}
-        />
-        <Button
-          title="Profile"
-          onPress={() => navigation.navigate('Profile')}
-        />
-        <Button
-          title="Nutrition Guide"
-          onPress={() => navigation.navigate('NutritionGuide')}
-        />
+        <Button title="Meal Plan" onPress={() => navigation.navigate('MealPlan')} />
+        <Button title="Calendar" onPress={() => navigation.navigate('Calendar')} />
+        <Button title="Profile" onPress={() => navigation.navigate('Profile')} />
+        <Button title="Nutrition Guide" onPress={() => navigation.navigate('NutritionGuide')} />
       </StyledView>
 
       {/* Main Content */}
