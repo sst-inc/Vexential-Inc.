@@ -9,6 +9,7 @@ const breakfastData = require('../utils/data/breakfastFood.json');
 const lunchData = require('../utils/data/lunchFood.json');
 const dinnerData = require('../utils/data/dinnerFood.json');
 
+
 const StyledView = styled(View);
 const StyledText = styled(Text);
 const StyledPressable = styled(Pressable);
@@ -58,44 +59,51 @@ const RecommendedMealPlan = ({ route }) => {
   };
 
   useEffect(() => {
-    var diseases = null
-    const getDiseases = async() => {
-      const data = await AsyncStorage.getItem('diseases')
-      diseases = await JSON.parse(data)
-    }
-    const getRandomFood = async() => {
-      await getDiseases()
+    const getDiseases = async () => {
+      const data = await AsyncStorage.getItem('diseases');
+      return JSON.parse(data);
+    };
+  
+    const getRandomFood = async () => {
+      const diseases = await getDiseases();
+      console.log('Diseases:', diseases);
+  
       const filteredBreakfast = Object.values(breakfastData).filter((meal) => meal.disease === diseases[0].name);
       const filteredLunch = Object.values(lunchData).filter((meal) => meal.disease === diseases[0].name);
       const filteredDinner = Object.values(dinnerData).filter((meal) => meal.disease === diseases[0].name);
-
+  
+      console.log('Filtered Breakfast:', filteredBreakfast);
+      console.log('Filtered Lunch:', filteredLunch);
+      console.log('Filtered Dinner:', filteredDinner);
+  
+      if (!filteredBreakfast.length || !filteredLunch.length || !filteredDinner.length) {
+        console.error('No meals matched for some or all types!');
+        // You might want to handle this scenario by setting some default values or showing a message to the user.
+      }
+  
       const filteredFoodChoices = {
         breakfast: filteredBreakfast,
         lunch: filteredLunch,
         dinner: filteredDinner
       };
-
+  
       chooseRandomFood(filteredFoodChoices);
-    }
-
-    const checkFood = async() => {
-      let data = await AsyncStorage.getItem(String(dayNumber))
-      let food = await JSON.parse(data)
-      
+    };
+  
+    const checkFood = async () => {
+      let food = await AsyncStorage.getItem(String(dayNumber));
+      food = JSON.parse(food);
+  
       if (!food) {
-        getRandomFood()
+        getRandomFood();
       } else {
-        setMealData(food)
+        setMealData(food);
       }
-    }
-
-    checkFood()
-    // const removeMe = async() => {
-    //   await AsyncStorage.removeItem(String(dayNumber))
-    // }
-    // removeMe()
-  },[]);
-
+    };
+  
+    checkFood();
+  }, []);
+   
   const renderItem = ({ item }) => (
     <View
       style={{

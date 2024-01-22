@@ -1,0 +1,51 @@
+{
+    "instructions": {
+      "title": "INSTRUCTIONS",
+      "description": "We will be asking you a few questions to complete your profile. Please choose the option that describes you."
+    },
+    "common": {
+      "next": "Next"
+    },
+
+    "age": {
+        "prompt": "What is your age?",
+        "range60to70": "60 - 70",
+        "range70to80": "70 - 80",
+        "range80to90": "80 - 90",
+        "range90to100": "90 - 100"
+
+    },
+
+    "buttons": {
+        "next": "Next"
+    },
+
+    "welcome": "Welcome to React",
+  "questions": {
+    "chronicDiseases": "Do you have any of these chronic diseases?"
+  },
+  "diseases": {
+    "diabetes": "Diabetes",
+    "highBloodPressure": "High Blood Pressure"
+  },
+
+  "mealPlan": {
+    "title": "Meal Plan"
+  },
+  "daysOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+
+  "sidebar": {
+    "mealPlan": "Meal Plan",
+    "calendar": "Calendar",
+    "profile": "Profile",
+    "nutritionGuide": "Nutrition Guide"
+  },
+
+  "calendar_title": "Calendar",
+  "loading": "Loading...",
+  "day": "Day",
+  "breakfast": "Breakfast",
+  "lunch": "Lunch",
+  "dinner": "Dinner"
+  }
+  
