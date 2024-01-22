@@ -1,0 +1,48 @@
+{
+    "instructions": {
+      "title": "说明",
+      "description": "我们会问您一些问题以完成您的个人资料。请选择最能描述您的选项。"
+    },
+    "common": {
+      "next": "下一步"
+    },
+    "age": {
+        "prompt": "您的年龄是多少？",
+        "range60to70": "60 - 70 岁",
+        "range70to80": "70 - 80 岁",
+        "range80to90": "80 - 90 岁",
+        "range90to100": "90 - 100 岁"
+    },
+
+    "buttons": {
+        "next": "下一个"
+    },
+
+    "welcome": "欢迎使用 React",
+  "questions": {
+    "chronicDiseases": "您有以下任何慢性病吗？"
+  },
+  "diseases": {
+    "diabetes": "糖尿病",
+    "highBloodPressure": "高血压"
+  },
+  "mealPlan": {
+    "title": "膳食计划"
+  },
+  "daysOfWeek": ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
+
+  "sidebar": {
+    "mealPlan": "膳食计划",
+    "calendar": "日历",
+    "profile": "个人资料",
+    "nutritionGuide": "营养指南"
+  },
+
+  "calendar_title": "Calendario",
+  "loading": "Cargando...",
+  "day": "Día",
+  "breakfast": "Desayuno",
+  "lunch": "Almuerzo",
+  "dinner": "Cena"
+  }
+  

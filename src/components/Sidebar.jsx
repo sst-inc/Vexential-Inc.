@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { View, Button, Pressable, Text, Image } from 'react-native';
+import React from 'react';
+import { View, Pressable, Text, Image } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import Svg, { Path } from 'react-native-svg';
+import { useTranslation } from 'react-i18next';
 
 const Sidebar = ({ dayNumber, selectedDiseases }) => {
   const navigation = useNavigation();
   const route = useRoute();
+  const { t } = useTranslation();
 
   return (
     <View className="w-[200] h-full bg-blue-100 py-10 flex flex-col items-center">
@@ -17,10 +18,12 @@ const Sidebar = ({ dayNumber, selectedDiseases }) => {
         <Image
           source={require('../../assets/mealplan_icon.png')}
           className="w-[7vw] h-[7vh]"
-          tintColor={route.name == 'MealPlan' ? '#3C92C1' : '#697D8C'}
+          tintColor={route.name === 'MealPlan' ? '#3C92C1' : '#697D8C'}
           resizeMode="contain"
         />
-        <Text className="pt-2 font-semibold text-lg text-center">Meal Plan</Text>
+        <Text className="pt-2 font-semibold text-lg text-center">
+          {t('sidebar.mealPlan')}
+        </Text>
       </Pressable>
 
       <View className="py-8">
@@ -33,10 +36,12 @@ const Sidebar = ({ dayNumber, selectedDiseases }) => {
             <Image
               source={require('../../assets/calendar_icon.png')}
               className="w-[6vw] h-[6vh]"
-              tintColor={route.name == 'Calendar' ? '#3C92C1' : '#697D8C'}
+              tintColor={route.name === 'Calendar' ? '#3C92C1' : '#697D8C'}
               resizeMode="contain"
             />
-            <Text className="mt-2 font-semibold text-lg text-center">Calendar</Text>
+            <Text className="mt-2 font-semibold text-lg text-center">
+              {t('sidebar.calendar')}
+            </Text>
           </View>
         </Pressable>
       </View>
@@ -51,10 +56,12 @@ const Sidebar = ({ dayNumber, selectedDiseases }) => {
             <Image
               source={require('../../assets/profile_icon.png')}
               className="w-[7vw] h-[7vh]"
-              tintColor={route.name == 'Profile' ? '#3C92C1' : '#697D8C'}
+              tintColor={route.name === 'Profile' ? '#3C92C1' : '#697D8C'}
               resizeMode="contain"
             />
-            <Text className="mt-2 font-semibold text-lg text-center">Profile</Text>
+            <Text className="mt-2 font-semibold text-lg text-center">
+              {t('sidebar.profile')}
+            </Text>
           </View>
         </Pressable>
       </View>
@@ -68,11 +75,13 @@ const Sidebar = ({ dayNumber, selectedDiseases }) => {
           <View className="flex flex-col">
             <Image
               source={require('../../assets/nutritionguide_icon.png')}
-              className="w-[7vw] h-[7vh] self-center"
-              tintColor={route.name == 'NutritionGuide' ? '#3C92C1' : '#697D8C'}
+              className="w-[7vw] h-[7vh]"
+              tintColor={route.name === 'NutritionGuide' ? '#3C92C1' : '#697D8C'}
               resizeMode="contain"
             />
-            <Text className="mt-2 font-semibold text-lg text-center">Nutrition Guide</Text>
+            <Text className="mt-2 font-semibold text-lg text-center">
+              {t('sidebar.nutritionGuide')}
+            </Text>
           </View>
         </Pressable>
       </View>
